@@ -44,6 +44,10 @@ cpp::
 	echo "making all in cpp";
 	( cd cpp && $(MAKE) all ) || exit 1;
 
+slicecpp::
+	echo "making slice in cpp";
+	( cd cpp && $(MAKE) slicecpp ) || exit 1;
+
 objc::
 	echo "making all in objc";
 	( cd java && $(MAKE) all ) || exit 1;

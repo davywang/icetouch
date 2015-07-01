@@ -92,5 +92,8 @@ $(EVERYTHING)::
 	    ( cd $$subdir && $(MAKE) -f Makefile $@ ) || exit 1; \
 	done
 
+slicecpp::
+	( cd src && $(MAKE) $@ ) || exit 1
+
 test::
 	@python $(top_srcdir)/allTests.py
