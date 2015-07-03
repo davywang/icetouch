@@ -14,8 +14,7 @@ include $(top_srcdir)/config/Make.rules
 SLICEDIRS	= \
 		  Ice \
 		  IceSSL \
-		  Glacier2Lib \
-		  Glacier2
+		  Glacier2Lib
 		  
 ifneq ($(COMPILE_FOR_MACOSX),yes)
 
