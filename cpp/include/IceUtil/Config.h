@@ -16,7 +16,7 @@
 // Most CPUs support only one endianness, with the notable exceptions
 // of Itanium (IA64) and MIPS.
 //
-#if defined(__GLIBC__) && !defined(__BYTE_ORDER)
+#ifdef __GLIBC__
 # include <endian.h>
 #endif
 
