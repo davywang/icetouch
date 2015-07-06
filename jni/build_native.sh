@@ -1,2 +1,0 @@
-NDK_MODULE_PATH=../cpp/src
-export NDK_MODULE_PATH

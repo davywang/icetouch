@@ -1,11 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-#LOCAL_WHOLE_STATIC_LIBRARIES := libIce
-#LOCAL_WHOLE_STATIC_LIBRARIES += libGlacier2
-
-$(call import-module,Ice)
-$(call import-module,Glacier2)
-$(call import-module,IceUtil)
-
-#include $(BUILD_STATIC_LIBRARY) 
+include $(LOCAL_PATH)/../../bzip2/Android.mk \
+	$(LOCAL_PATH)/../cpp/src/IceUtil/Android.mk \
+	$(LOCAL_PATH)/../cpp/src/Ice/Android.mk \
+	$(LOCAL_PATH)/../cpp/src/Glacier2Lib/Android.mk
