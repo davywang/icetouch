@@ -47,7 +47,7 @@
 #if !defined(ICE_OS_WINRT) && (!defined(__APPLE__) || TARGET_OS_IPHONE == 0)
 #   include <Ice/Service.h>
 #endif
-#if !defined(_WIN32) && (!defined(__APPLE__) || TARGET_OS_IPHONE == 0)
+#if !defined(_WIN32) && !defined(ANDROID) && (!defined(__APPLE__) || TARGET_OS_IPHONE == 0)
 #   include <Ice/IconvStringConverter.h>
 #endif
 

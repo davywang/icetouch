@@ -36,7 +36,7 @@ using namespace IceInternal;
 
 extern "C" 
 {
-#ifndef ICE_USE_CFSTREAM
+#if !defined(ICE_USE_CFSTREAM) && !defined(ANDROID)
     Ice::Plugin* createIceSSL(const Ice::CommunicatorPtr&, const std::string&, const Ice::StringSeq&);
 #endif
 }
@@ -244,7 +244,7 @@ Ice::initialize(int& argc, char* argv[], const InitializationData& initializatio
     InitializationData initData = initializationData;
     initData.properties = createProperties(argc, argv, initData.properties, initData.stringConverter);
 
-#ifndef ICE_USE_CFSTREAM
+#if !defined(ICE_USE_CFSTREAM) && !defined(ANDROID)
     initData.properties->setProperty("Ice.Plugin.IceSSL", "createIceSSL");
     createIceSSL(0, "", Ice::StringSeq());
 #endif
@@ -278,7 +278,7 @@ Ice::initialize(const InitializationData& initializationData, Int version)
     char* argv[] = { 0 };
 
     InitializationData initData = initializationData;
-#ifndef ICE_USE_CFSTREAM
+#if !defined(ICE_USE_CFSTREAM) && !defined(ANDROID)
     initData.properties = createProperties(argc, argv, initData.properties, initData.stringConverter);
     initData.properties->setProperty("Ice.Plugin.IceSSL", "createIceSSL");
     createIceSSL(0, "", Ice::StringSeq());

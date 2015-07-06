@@ -105,6 +105,22 @@ private:
 };
 #endif
 
+#ifdef ANDROID
+class ICE_API AndroidStringConverter : public StringConverter
+{
+public:
+    explicit AndroidStringConverter();
+
+    virtual Byte* toUTF8(const char*, const char*, UTF8Buffer&) const;
+
+    virtual void fromUTF8(const Byte*, const Byte*, std::string& target) const;
+
+private:
+    UnicodeWstringConverter _unicodeWstringConverter;
+};
+
+#endif
+
 
 //
 // A special plug-in that sets stringConverter and wstringConverter during
